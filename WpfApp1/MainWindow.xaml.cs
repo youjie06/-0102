@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace _2023_WpfApp4
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,10 +25,10 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-        private void openbutton_Click(object sender, RoutedEventArgs e)
+        private void openButton_Click(object sender, RoutedEventArgs e)
         {
             MyDocumentViewer myDocumentViewer = new MyDocumentViewer();
-            myDocumentViewer.ShowDialog();
-        }            
+            myDocumentViewer.Show();
+        }
     }
 }
