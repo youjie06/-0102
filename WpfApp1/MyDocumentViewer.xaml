@@ -39,6 +39,7 @@
                     <Image Width="23" Height="23" Source="/underlined.png"/>
                 </ToggleButton>
                 <xctk:ColorPicker x:Name="fontColorPicker" Width="100" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" DisplayColorAndName="True" SelectedColorChanged="fontColorPicker_SelectedColorChanged" />
+                <xctk:ColorPicker x:Name="backColorPicker" Width="100" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" DisplayColorAndName="True" SelectedColorChanged="backColorPicker_SelectedColorChanged" Background="White" />
                 <ComboBox x:Name="fontFamilyComboBox" Height="35" Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="#FFFA6666" Background="#FFF7E5E5" SelectionChanged="fontFamilyComboBox_SelectionChanged"/>
                 <ComboBox x:Name="fontSizeComboBox" Height="35" Width="50" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#FFE4F6F9" SelectionChanged="fontSizeComboBox_SelectionChanged"/>
             </ToolBar>

@@ -120,6 +120,13 @@ namespace _2023_WpfApp4
             {
                 fontColorPicker.SelectedColor = foregroundProperty.Color;
             }
+            //判斷所選中的文字的字體色彩，同步更新fontColorPicker的狀態
+            SolidColorBrush? backgroundProperty = rtbEditor.Selection.GetPropertyValue(TextElement.BackgroundProperty) as SolidColorBrush;
+
+            if (backgroundProperty != null)
+            {
+                fontBackgroundColorPicker.SelectedColor = backgroundProperty.Color;
+            }
         }
 
         private void fontColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
@@ -127,6 +134,14 @@ namespace _2023_WpfApp4
             fontColor = (Color)e.NewValue;
             SolidColorBrush fontBrush = new SolidColorBrush(fontColor);
             rtbEditor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, fontBrush);
+        }
+
+
+        private void fontBackgroundColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            fontBackgroundColor = e.NewValue ?? Colors.White;
+            SolidColorBrush backgroundBrush = new SolidColorBrush(fontBackgroundColor);
+            rtbEditor.Selection.ApplyPropertyValue(TextElement.BackgroundProperty, backgroundBrush);
         }
 
         private void fontFamilyComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -149,5 +164,6 @@ namespace _2023_WpfApp4
         {
             rtbEditor.Document.Blocks.Clear();
         }
+                
     }
 }
