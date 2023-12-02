@@ -55,41 +55,41 @@ namespace _2023_WpfApp4
             }
         }
 
-            private void SaveCommand_Executed(object sender, RoutedEventArgs e)
+        private void SaveCommand_Executed(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Rich Text Format (*.rtf)|*.rtf|HTML Files (*.html)|*.html";
+            if (saveFileDialog.ShowDialog() == true)
             {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "Rich Text Format (*.rtf)|*.rtf|HTML Files (*.html)|*.html";
-                if (saveFileDialog.ShowDialog() == true)
+                string selectedFileType = Path.GetExtension(saveFileDialog.FileName).ToLowerInvariant();
+                if (selectedFileType == ".rtf")
                 {
-                    string selectedFileType = Path.GetExtension(saveFileDialog.FileName).ToLowerInvariant();
-                    if (selectedFileType == ".rtf")
-                    {
-                        SaveAsRtf(saveFileDialog.FileName);
-                    }
-                    else if (selectedFileType == ".html")
-                    {
-                        SaveAsHtml(saveFileDialog.FileName);
-                    }
+                    SaveAsRtf(saveFileDialog.FileName);
+                }
+                else if (selectedFileType == ".html")
+                {
+                    SaveAsHtml(saveFileDialog.FileName);
                 }
             }
+        }
 
-            private void SaveAsRtf(string fileName)
+        private void SaveAsRtf(string fileName)
+        {
+            using (FileStream fs = new FileStream(fileName, FileMode.Create))
             {
-                using (FileStream fs = new FileStream(fileName, FileMode.Create))
-                {
-                    TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
-                    range.Save(fs, DataFormats.Rtf);
-                }
+                TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                range.Save(fs, DataFormats.Rtf);
             }
+        }
 
-            private void SaveAsHtml(string fileName)
+        private void SaveAsHtml(string fileName)
+        {
+            using (FileStream fs = new FileStream(fileName, FileMode.Create))
             {
-                using (FileStream fs = new FileStream(fileName, FileMode.Create))
-                {
-                    TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
-                    range.Save(fs, DataFormats.Html);
-                }
+                TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                range.Save(fs, DataFormats.Html);
             }
+        }
 
         private void rtbEditor_SelectionChanged(object sender, RoutedEventArgs e)
         {
