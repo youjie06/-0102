@@ -18,6 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="image\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="bold.png" />
     <Resource Include="clear.png" />
     <Resource Include="italic.png" />

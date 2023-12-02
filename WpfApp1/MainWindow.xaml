@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:_2023_WpfApp4"
         mc:Ignorable="d"
         Title="2023小作家" Height="450" Width="800">
-  <Grid>
-    <Button x:Name="openButton" Content="開啟新文件" HorizontalAlignment="Left" Margin="110,85,0,0" VerticalAlignment="Top" Height="75" Width="140" FontSize="18" Click="openButton_Click"/>
+    <Grid>
+        <Button x:Name="openButton" Content="開啟新文件" HorizontalAlignment="Left" Margin="110,85,0,0" VerticalAlignment="Top" Height="75" Width="140" FontSize="18" Click="openButton_Click"/>
 
-  </Grid>
+    </Grid>
 </Window>

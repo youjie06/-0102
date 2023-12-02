@@ -7,44 +7,44 @@
         xmlns:local="clr-namespace:_2023_WpfApp4"
         mc:Ignorable="d"
         Title="MyDocumentViewer" Height="450" Width="800">
-  <Window.CommandBindings>
-    <CommandBinding Command="ApplicationCommands.New" Executed="NewCommand_Executed"/>
-    <CommandBinding Command="ApplicationCommands.Open" Executed="OpenCommand_Executed"/>
-    <CommandBinding Command="ApplicationCommands.Save" Executed="SaveCommand_Executed"/>
-  </Window.CommandBindings>
-  <DockPanel>
-    <ToolBarTray Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" DockPanel.Dock="Top" Background="#FFE3ECF6">
-      <ToolBar x:Name="applicationToolBar" Height="40" Width="200">
-        <Button x:Name="newButton" Command="ApplicationCommands.New" Width="35" Height="35">
-          <Image Width="35" Height="35" Source="/new.png"/>
-        </Button>
-        <Button x:Name="openButton" Command="ApplicationCommands.Open" Width="35" Height="35">
-          <Image Width="35" Height="35" Source="/open.png"/>
-        </Button>
-        <Button x:Name="saveButton" Command="ApplicationCommands.Save" Width="35" Height="35">
-          <Image Width="35" Height="35" Source="/save.png"/>
-        </Button>
-        <Button x:Name="clearButton" Width="35" Height="35" Click="clearButton_Click">
-          <Image Width="35" Height="35" Source="/trashcan.png"/>
-        </Button>
-      </ToolBar>
-      <ToolBar x:Name="editingToolBar" Width="500">
-        <ToggleButton x:Name="boldButton" Command="EditingCommands.ToggleBold" Height="35" Width="35">
-          <Image Width="35" Height="35" Source="/bold.png"/>
-        </ToggleButton>
-        <ToggleButton x:Name="italicButton" Command="EditingCommands.ToggleItalic" Height="35" Width="35">
-          <Image Width="35" Height="35" Source="/italic.png"/>
-        </ToggleButton>
-        <ToggleButton x:Name="underlineButton" Command="EditingCommands.ToggleUnderline" Height="35" Width="35">
-          <Image Width="35" Height="35" Source="/underline.png"/>
-        </ToggleButton>
-        <xctk:ColorPicker x:Name="fontColorPicker" Width="100" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" DisplayColorAndName="True" SelectedColorChanged="fontColorPicker_SelectedColorChanged" />
-        <ComboBox x:Name="fontFamilyComboBox" Height="35" Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="#FFFA6666" Background="#FFF7E5E5" SelectionChanged="fontFamilyComboBox_SelectionChanged"/>
-        <ComboBox x:Name="fontSizeComboBox" Height="35" Width="50" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#FFE4F6F9" SelectionChanged="fontSizeComboBox_SelectionChanged"/>
-      </ToolBar>
-    </ToolBarTray>
-    <RichTextBox x:Name="rtbEditor" Background="#FFF7F6ED" SelectionChanged="rtbEditor_SelectionChanged">
-      <FlowDocument/>
-    </RichTextBox>
-  </DockPanel>
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New" Executed="NewCommand_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="OpenCommand_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Save" Executed="SaveCommand_Executed"/>
+    </Window.CommandBindings>
+    <DockPanel>
+        <ToolBarTray Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" DockPanel.Dock="Top" Background="#FFE3ECF6">
+            <ToolBar x:Name="applicationToolBar" Height="40" Width="200">
+                <Button x:Name="newButton" Command="ApplicationCommands.New" Width="35" Height="35">
+                    <Image Width="23" Height="23" Source="/new.png"/>
+                </Button>
+                <Button x:Name="openButton" Command="ApplicationCommands.Open" Width="35" Height="35">
+                    <Image Width="23" Height="23" Source="/open.png"/>
+                </Button>
+                <Button x:Name="saveButton" Command="ApplicationCommands.Save" Width="35" Height="35">
+                    <Image Width="23" Height="23" Source="/save.png"/>
+                </Button>
+                <Button x:Name="clearButton" Width="35" Height="35" Click="clearButton_Click">
+                    <Image Width="23" Height="23" Source="/clear.png"/>
+                </Button>
+            </ToolBar>
+            <ToolBar x:Name="editingToolBar" Width="500">
+                <ToggleButton x:Name="boldButton" Command="EditingCommands.ToggleBold" Height="35" Width="35">
+                    <Image Width="23" Height="23" Source="/bold.png"/>
+                </ToggleButton>
+                <ToggleButton x:Name="italicButton" Command="EditingCommands.ToggleItalic" Height="35" Width="35">
+                    <Image Width="23" Height="23" Source="/italic.png"/>
+                </ToggleButton>
+                <ToggleButton x:Name="underlineButton" Command="EditingCommands.ToggleUnderline" Height="35" Width="35">
+                    <Image Width="23" Height="23" Source="/underlined.png"/>
+                </ToggleButton>
+                <xctk:ColorPicker x:Name="fontColorPicker" Width="100" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" DisplayColorAndName="True" SelectedColorChanged="fontColorPicker_SelectedColorChanged" />
+                <ComboBox x:Name="fontFamilyComboBox" Height="35" Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="#FFFA6666" Background="#FFF7E5E5" SelectionChanged="fontFamilyComboBox_SelectionChanged"/>
+                <ComboBox x:Name="fontSizeComboBox" Height="35" Width="50" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#FFE4F6F9" SelectionChanged="fontSizeComboBox_SelectionChanged"/>
+            </ToolBar>
+        </ToolBarTray>
+        <RichTextBox x:Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" Background="#FFD1F4FD">
+            <FlowDocument/>
+        </RichTextBox>
+    </DockPanel>
 </Window>

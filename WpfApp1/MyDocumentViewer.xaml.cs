@@ -67,6 +67,175 @@ namespace _2023_WpfApp4
             }
         }
 
+        /*private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Rich Text Format檔案|*.rtf|所有檔案|*.*";
+            if (fileDialog.ShowDialog() == true)
+            {
+                TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+
+                using (FileStream fileStream = new FileStream(fileDialog.FileName, FileMode.Open))
+                {
+                    range.Load(fileStream, DataFormats.Rtf);
+                }
+            }
+        }
+
+        private void SaveCommand_Executed(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                // 建立FileStream用於RTF格式
+                using (FileStream rtfFs = new FileStream(saveFileDialog.FileName + ".rtf", FileMode.Create))
+                {
+                    TextRange rtfRange = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                    rtfRange.Save(rtfFs, DataFormats.Rtf);
+                }
+
+                // 建立FileStream用於HTML格式
+                using (FileStream htmlFs = new FileStream(saveFileDialog.FileName + ".html", FileMode.Create))
+                {
+                    TextRange htmlRange = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                    htmlRange.Save(htmlFs, DataFormats.Html);
+                }
+            }
+        }*/
+
+        /*private void SaveCommand_Executed(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                {
+                    TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                    range.Save(fs, DataFormats.Rtf);
+                }
+            }
+        }
+
+        private void SaveAsRtf_Executed(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Rich Text Format (*.rtf)|*.rtf";
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                {
+                    TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                    range.Save(fs, DataFormats.Rtf);
+                }
+            }
+        }
+
+        private void SaveAsHtml_Executed(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "HTML Files (*.html)|*.html";
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                {
+                    TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                    range.Save(fs, DataFormats.Html);
+                }
+            }
+        }*/
+
+
+        /*private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Rich Text Format檔案|*.rtf|所有檔案|*.*";
+            if (fileDialog.ShowDialog() == true)
+            {
+                TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+
+                using (FileStream fileStream = new FileStream(fileDialog.FileName, FileMode.Open))
+                {
+                    range.Load(fileStream, DataFormats.Rtf);
+                }
+            }
+        }
+              
+
+        private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "HTML Files (*.html)|*.html";
+                if (saveFileDialog.ShowDialog() == true)
+                {
+                    using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                    {
+                        TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                        range.Save(fs, DataFormats.Html);
+                    }
+                }
+            }*/
+
+
+        /*private void OpenCommand_Executed(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                rtbEditor.SelectAll();
+                rtbEditor.Selection.Load(new FileStream(openFileDialog.FileName, FileMode.Open), DataFormats.Rtf);
+            }
+        }
+
+        private void SaveCommand_Executed(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+                        
+            saveFileDialog.Filter = "Rich Text Format (*.rtf)|*.rtf";
+            saveFileDialog.Filter = "HTML Files (*.html)|*.html";
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                {
+                    TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                    range.Save(fs, DataFormats.Rtf);
+                }
+                using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                {
+                    TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                    range.Save(fs, DataFormats.Html);
+                }
+            }                       
+        }*/
+
+        /* private void SaveCommand_Executed(object sender, RoutedEventArgs e)
+         {
+             SaveFileDialog saveFileDialog = new SaveFileDialog();
+             saveFileDialog.Filter = "Rich Text Format (*.rtf)|*.rtf";
+             if (saveFileDialog.ShowDialog() == true)
+             {
+                 using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                 {
+                     TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                     range.Save(fs, DataFormats.Rtf);
+                 }
+             }
+         }
+
+         private void SaveCommand_Executed(object sender, RoutedEventArgs e)
+         {
+             SaveFileDialog saveFileDialog = new SaveFileDialog();
+             saveFileDialog.Filter = "HTML Files (*.html)|*.html";
+             if (saveFileDialog.ShowDialog() == true)
+             {
+                 using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                 {
+                     TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                     range.Save(fs, DataFormats.Html);
+                 }
+             }
+         }*/
+
+
         private void rtbEditor_SelectionChanged(object sender, RoutedEventArgs e)
         {
             //判斷選中的文字是否為粗體，並同步更新boldButton的狀態
