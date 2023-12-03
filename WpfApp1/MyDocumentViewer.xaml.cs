@@ -16,12 +16,12 @@ namespace _2023_WpfApp4
     public partial class MyDocumentViewer : Window
     {
         Color fontColor = Colors.Black;
-
-
+        Color fontBackgroundColor = Colors.Transparent;
         public MyDocumentViewer()
         {
             InitializeComponent();
             fontColorPicker.SelectedColor = fontColor;
+            fontBackgroundColorPicker.SelectedColor = fontBackgroundColor;
 
             foreach (FontFamily fontFamily in Fonts.SystemFontFamilies)
             {
@@ -93,7 +93,6 @@ namespace _2023_WpfApp4
 
         private void rtbEditor_SelectionChanged(object sender, RoutedEventArgs e)
         {
-
             //判斷選中的文字是否為粗體，並同步更新boldButton的狀態
             object property = rtbEditor.Selection.GetPropertyValue(TextElement.FontWeightProperty);
             boldButton.IsChecked = (property is FontWeight && (FontWeight)property == FontWeights.Bold);
@@ -120,7 +119,7 @@ namespace _2023_WpfApp4
             {
                 fontColorPicker.SelectedColor = foregroundProperty.Color;
             }
-            //判斷所選中的文字的字體色彩，同步更新fontColorPicker的狀態
+            //判斷所選中的文字的字體色彩，同步更新fontBackgroundColorPicker的狀態
             SolidColorBrush? backgroundProperty = rtbEditor.Selection.GetPropertyValue(TextElement.BackgroundProperty) as SolidColorBrush;
 
             if (backgroundProperty != null)
@@ -139,7 +138,7 @@ namespace _2023_WpfApp4
 
         private void fontBackgroundColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
         {
-            fontBackgroundColor = e.NewValue ?? Colors.White;
+            fontBackgroundColor = (Color)e.NewValue;
             SolidColorBrush backgroundBrush = new SolidColorBrush(fontBackgroundColor);
             rtbEditor.Selection.ApplyPropertyValue(TextElement.BackgroundProperty, backgroundBrush);
         }
@@ -164,6 +163,5 @@ namespace _2023_WpfApp4
         {
             rtbEditor.Document.Blocks.Clear();
         }
-                
     }
 }
