@@ -119,9 +119,9 @@ namespace _2023_WpfApp4
             {
                 fontColorPicker.SelectedColor = foregroundProperty.Color;
             }
+
             //判斷所選中的文字的字體背景色彩，同步更新fontBackgroundColorPicker的狀態
             SolidColorBrush? backgroundProperty = rtbEditor.Selection.GetPropertyValue(TextElement.BackgroundProperty) as SolidColorBrush;
-
             if (backgroundProperty != null)
             {
                 fontBackgroundColorPicker.SelectedColor = backgroundProperty.Color;
@@ -134,7 +134,6 @@ namespace _2023_WpfApp4
             SolidColorBrush fontBrush = new SolidColorBrush(fontColor);
             rtbEditor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, fontBrush);
         }
-
 
         private void fontBackgroundColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
         {
