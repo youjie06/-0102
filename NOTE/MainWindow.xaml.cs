@@ -25,8 +25,10 @@ namespace _2023_WpfApp4
             InitializeComponent();
         }
 
+        // 「打開」按鈕的點擊事件處理函數
         private void openButton_Click(object sender, RoutedEventArgs e)
         {
+            // 創建 MyDocumentViewer 實例，並顯示新的文檔視窗
             MyDocumentViewer myDocumentViewer = new MyDocumentViewer();
             myDocumentViewer.Show();
         }
